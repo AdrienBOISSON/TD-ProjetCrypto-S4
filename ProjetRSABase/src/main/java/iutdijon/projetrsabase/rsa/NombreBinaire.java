@@ -1,5 +1,7 @@
 package iutdijon.projetrsabase.rsa;
 
+import iutdijon.projetrsabase.network.Network;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.BitSet;
 
@@ -154,8 +156,17 @@ public class NombreBinaire {
      }
      
      //DEFI 7 - Renvoie si un nombre est pair
-     public boolean estPair() {
-         return false;
+     public boolean estPair() throws IOException {
+         boolean bool = false;
+         Network net = new Network();
+         String mess;
+         net.receiveMessage();
+         mess = net.receiveMessage();
+         int i = Character.getNumericValue(mess.charAt(mess.length()-1));
+         if(i == 0){
+         bool = true;
+     }
+           return bool;   
      }
      
      //DEFI 8 - Calcul la multiplication de this avec mot2
