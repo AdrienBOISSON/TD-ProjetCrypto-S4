@@ -152,7 +152,15 @@ public class NombreBinaire {
      
      //DEFI 6 - Renvoie si this est égal à mot2 ou non
      public boolean estEgal(NombreBinaire mot2) {
-        return false;
+         boolean bool = true;
+         for(int i =0; i<this.listeBits.size()-1;i++){
+             boolean m1 =this.get(i);
+             boolean m2 = mot2.get(i);
+             if(m1 != m2){
+                 bool= false;
+             }
+         }
+        return bool;
      }
      
      //DEFI 7 - Renvoie si un nombre est pair
