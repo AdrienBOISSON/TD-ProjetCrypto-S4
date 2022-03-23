@@ -137,7 +137,16 @@ public class NombreBinaire {
      
      //DEFI 3 - Caclule le décalage de n bits (multiplie par 2^n)
      public NombreBinaire decalage(int n) {
-         return null;
+         NombreBinaire nbB = new NombreBinaire();
+         nbB.forcerTaille(this.getTaille()+n);
+         for(int i=0;i<nbB.getTaille();i++){
+            if(i < n ){
+                nbB.set(i, false);
+            }else{
+                nbB.set(i, this.get(i-n));
+            }
+         }
+         return nbB;
      }
      
      //DEFI 4 - renvoie le resultat de l'addition de this avec mot3
@@ -166,10 +175,12 @@ public class NombreBinaire {
      //DEFI 7 - Renvoie si un nombre est pair
      public boolean estPair() throws IOException {
          boolean bool = false;
-         if(this.listeBits.get(0)==false){
+
+         boolean i = this.listeBits.get(0);
+         if(i == false){
          bool = true;
      }
-           return bool;   
+           return bool;  
      }
      
      //DEFI 8 - Calcul la multiplication de this avec mot2

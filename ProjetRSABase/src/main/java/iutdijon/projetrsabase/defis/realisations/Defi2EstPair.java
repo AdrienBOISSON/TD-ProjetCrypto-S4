@@ -12,32 +12,23 @@ import java.io.IOException;
 
 /**
  *
- * @author Hugo
+ * @author hv860430
  */
-public class Defi6EstEgal extends Defi{
+public class Defi2EstPair extends Defi{
 
     @Override
     public void executer() throws IOException {
-          Network net = new Network();
+        Network net = new Network();
         boolean bool;
         net.receiveMessage();
        String s =  "";
-       String s2 = "";
-        NombreBinaire nb = new NombreBinaire(net.receiveMessage());
-        NombreBinaire nb2 = new NombreBinaire(net.receiveMessage());
+        
         while(!s.equals("Defi valide")){
-            
-           
-             bool = nb.estEgal(nb2);
+            NombreBinaire nb = new NombreBinaire(net.receiveMessage());
+             bool = nb.estPair();
         net.sendMessage(Boolean.toString(bool));
         s = net.receiveMessage();
-        s = net.receiveMessage();
-        s2 = net.receiveMessage();
-        nb= new NombreBinaire(s);
-        nb2 = new NombreBinaire(s2);
-        
         }
     }
-    }
     
-
+}

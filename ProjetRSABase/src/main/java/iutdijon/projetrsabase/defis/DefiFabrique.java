@@ -19,9 +19,13 @@ public class DefiFabrique {
         switch(numeroDuDefis) {
             case 1 : defi = new Defi1ConnexionAuServeur(); break;
             
-            case 6 : defi = new Defi6EstEgal();break;
+            case 3 : defi = new DefiDecalage(); break;
             
-            case 7 : defi = new Defi7EstPair();break;
+            case 2 : defi = new Defi2EstPair();break;
+            
+            case 4 : defi = new DefiAddition();break;
+            
+            case 6 : defi = new Defi6EstEgal();break;
             
             default : throw new UnsupportedOperationException("Défis non implémenté !");
         }
