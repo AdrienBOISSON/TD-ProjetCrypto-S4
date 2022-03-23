@@ -158,12 +158,7 @@ public class NombreBinaire {
      //DEFI 7 - Renvoie si un nombre est pair
      public boolean estPair() throws IOException {
          boolean bool = false;
-         Network net = new Network();
-         String mess;
-         net.receiveMessage();
-         mess = net.receiveMessage();
-         int i = Character.getNumericValue(mess.charAt(mess.length()-1));
-         if(i == 0){
+         if(this.listeBits.get(0)==false){
          bool = true;
      }
            return bool;   
