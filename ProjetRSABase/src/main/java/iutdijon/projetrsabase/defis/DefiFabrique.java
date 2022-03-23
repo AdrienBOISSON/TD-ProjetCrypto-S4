@@ -27,6 +27,8 @@ public class DefiFabrique {
             
             case 6 : defi = new Defi6EstEgal();break;
             
+            case 7 : defi = new DefiMultiplication();break;
+            
             default : throw new UnsupportedOperationException("Défis non implémenté !");
         }
         
